@@ -1,0 +1,85 @@
+<div>
+    <button type="button" class="btn btn-primary float-right" placement="top" ngbTooltip="Agregar" (click)="open(content)"><i class="fa fa-plus"></i></button>
+    <h4 class="my-4">Mi inventario</h4>
+</div>
+<table class="table table-striped table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Clave</th>
+            <th>Nombre</th>
+            <th>Costo</th>
+            <th>Cantidad</th>
+            <th>Total</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Papitas</td>
+            <td>$ 10.00</td>
+            <td>30</td>
+            <td>$ 300.00</td>
+            <td>
+                <button type="button" class="btn btn-outline-primary" placement="top" ngbTooltip="Editar"><i class="fa fa-pencil-square-o"></i></button>
+                <button type="button" class="btn btn-outline-info" placement="top" ngbTooltip="Detalle"><i class="fa fa-binoculars"></i></button>
+                <button type="button" class="btn btn-outline-danger" placement="top" ngbTooltip="Eliminar"><i class="fa fa-trash-o"></i></button>
+            </td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Refresco</td>
+            <td>$ 9.00</td>
+            <td>17</td>
+            <td>$ 153.00</td>
+            <td>
+                <button type="button" class="btn btn-primary" placement="top" ngbTooltip="Editar"><i class="fa fa-pencil-square-o"></i></button>
+                <button type="button" class="btn btn-info" placement="top" ngbTooltip="Detalle"><i class="fa fa-binoculars"></i></button>
+                <button type="button" class="btn btn-danger" placement="top" ngbTooltip="Eliminar"><i class="fa fa-trash-o"></i></button>
+            </td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Paletas</td>
+            <td>$ 2.50</td>
+            <td>33</td>
+            <td>$ 82.50</td>
+            <td>
+                <button type="button" class="btn btn-secondary" placement="top" ngbTooltip="Editar"><i class="fa fa-pencil-square-o"></i></button>
+                <button type="button" class="btn btn-secondary" placement="top" ngbTooltip="Detalle"><i class="fa fa-binoculars"></i></button>
+                <button type="button" class="btn btn-secondary" placement="top" ngbTooltip="Eliminar"><i class="fa fa-trash-o"></i></button>
+            </td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Galletas</td>
+            <td>$ 7.50</td>
+            <td>8</td>
+            <td>$ 60.00</td>
+            <td>
+                <button type="button" class="btn btn-outline-secondary" placement="top" ngbTooltip="Editar"><i class="fa fa-pencil-square-o"></i></button>
+                <button type="button" class="btn btn-outline-secondary" placement="top" ngbTooltip="Detalle"><i class="fa fa-binoculars"></i></button>
+                <button type="button" class="btn btn-outline-secondary" placement="top" ngbTooltip="Eliminar"><i class="fa fa-trash-o"></i></button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="float-right">
+    <ngb-pagination [collectionSize]="70" [(page)]="page" [boundaryLinks]="true"></ngb-pagination>
+</div>
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Producto</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <app-inventory-form></app-inventory-form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-success" (click)="modal.close()">Guardar</button>
+    </div>
+</ng-template>
